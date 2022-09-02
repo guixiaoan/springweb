@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace 指定usermapper的全类名-->
+<mapper namespace="com.example.guixiaoan.springweb.Mapper.UserMapper" >
+
+    <!--    id必须与mapper接口中的方法名一致，具体其他实现可以参照mybatis官方文档-->
+    <select id="queryAllUser" parameterType="com.example.guixiaoan.springweb.vo.User" resultType="com.example.guixiaoan.springweb.vo.User"  >
+        select id,name from user ;
+    </select>
+</mapper>
