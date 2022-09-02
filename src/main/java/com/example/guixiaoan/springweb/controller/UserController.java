@@ -64,4 +64,22 @@ public class UserController {
 
 
     }
+
+
+    @RequestMapping("/queryUserList2")
+    public Object queryUserList2(@RequestBody Map<String,Object> obj){
+
+        if (obj != null) {
+            String id = (String)obj.get("id") ;
+            if (id != null) {
+                System.out.println(id);
+                return userService.queryUserList(Integer.parseInt(id)) ;
+            }
+
+        }
+        return null ;
+
+
+
+    }
 }
