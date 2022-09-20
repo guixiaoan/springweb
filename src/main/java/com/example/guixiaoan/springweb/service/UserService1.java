@@ -1,14 +1,13 @@
 package com.example.guixiaoan.springweb.service;
 
-import com.example.guixiaoan.springweb.enumD.Season;
 import com.example.guixiaoan.springweb.vo.User;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.Field;
-import java.sql.SQLOutput;
 import java.util.*;
-import java.util.stream.Collectors;
 
 /**
  * @description:
@@ -18,6 +17,8 @@ import java.util.stream.Collectors;
  */
 @Slf4j
 public class UserService1 {
+
+    private final Logger logger = LoggerFactory.getLogger(UserService1.class);
 
     public String getMessage() {
         List<String> list = new ArrayList<String>() ;

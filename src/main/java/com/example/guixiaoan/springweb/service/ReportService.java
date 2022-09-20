@@ -11,8 +11,10 @@ import com.example.guixiaoan.springweb.enumD.ReportEnum;
 public class ReportService {
 
     public static void main(String[] args) {
-        ReportEnum s = ReportEnum.fromType("R004_FISP") ;
-        System.out.println(s);
+//        ReportEnum s = ReportEnum.fromType("R004_FISP") ;
+//        System.out.println(s);
+
+
     }
 
 }
