@@ -4,6 +4,7 @@ import com.example.guixiaoan.springweb.service.UserService;
 import com.example.guixiaoan.springweb.vo.User;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.thymeleaf.util.ObjectUtils;
 
+import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
 
@@ -25,6 +27,21 @@ public class UserController {
     @Autowired
     private UserService userService ;
 
+    @Resource
+    StringRedisTemplate stringRedisTemplate;
+    @RequestMapping("/setRedis")
+    public String setValue(){
+        String key = "username";
+        String value = "zhangsan";
+        stringRedisTemplate.opsForValue().set(key,value);
+        return "set succ";
+    }
+    @RequestMapping("/getRedis")
+    public String getValue(){
+        String key = "username";
+        String result = stringRedisTemplate.opsForValue().get(key);
+        return result;
+    }
     @RequestMapping("/queryAllUser")
     public List<User> queryAllUser() {
        // System.out.println(msg);

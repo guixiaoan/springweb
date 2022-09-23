@@ -5,6 +5,16 @@ spring:
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
     #driver-class-name: com.mysql.jdbc.Driver com.mysql.cj.jdbc.Driver
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: root
+    pool:
+      max-active: 8
+      max-wait: 1
+      max-idle: 8
+      min-idle: 0
+    connect-timeout: 3000
 
 mybatis:
     #指定mapper文件位置
@@ -13,7 +23,6 @@ mybatis:
 
 server:
   port: 9999
-
 
 
 logging:
