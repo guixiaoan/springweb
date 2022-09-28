@@ -15,6 +15,11 @@ spring:
       max-idle: 8
       min-idle: 0
     connect-timeout: 3000
+  mail:
+    host: smtp.qq.com
+    port: 587
+    username: 11111111@qq.com
+    password: bwonpanysgyybdja
 
 mybatis:
     #指定mapper文件位置
