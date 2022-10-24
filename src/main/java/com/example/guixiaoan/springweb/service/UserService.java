@@ -37,4 +37,8 @@ public class UserService {
         return users;
     }
 
+    public void updateUserInfo(int id) {
+
+    }
+
 }

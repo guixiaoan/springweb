@@ -1,5 +1,7 @@
 package com.example.guixiaoan.springweb.controller;
 
+import com.example.guixiaoan.springweb.idWorker.IdWorker;
+import com.example.guixiaoan.springweb.service.JobService;
 import com.example.guixiaoan.springweb.service.UserService;
 import com.example.guixiaoan.springweb.vo.User;
 import org.mybatis.spring.annotation.MapperScan;
@@ -29,6 +31,11 @@ public class UserController {
 
     @Resource
     StringRedisTemplate stringRedisTemplate;
+
+    @Autowired
+    JobService jobService ;
+
+    IdWorker idWorker ;
     @RequestMapping("/setRedis")
     public String setValue(){
         String key = "username";
@@ -96,7 +103,14 @@ public class UserController {
         }
         return null ;
 
+    }
 
-
+    @RequestMapping("/testBatch")
+    public void testBatch() {
+        jobService.testBatch();
+    }
+    @RequestMapping("/getId")
+    public String getId() {
+        return IdWorker.getId()+"";
     }
 }

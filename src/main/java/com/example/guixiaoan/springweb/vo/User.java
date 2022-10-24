@@ -19,6 +19,7 @@ public class User {
     public int id ;
     public String name ;
 
+    public String batchid ;
     public int getId() {
         return id;
     }
@@ -33,5 +34,13 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getBatchid() {
+        return batchid;
+    }
+
+    public void setBatchid(String batchid) {
+        this.batchid = batchid;
     }
 }
