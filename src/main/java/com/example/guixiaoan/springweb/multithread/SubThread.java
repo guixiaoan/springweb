@@ -29,5 +29,14 @@ public class SubThread extends Thread {
             }
         };
         t2.start();
+
+
+        Thread t3 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("t3") ;
+            }
+        }) ;
+        t3.start();
     }
 }
